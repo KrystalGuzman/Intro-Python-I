@@ -17,11 +17,12 @@ print(y)
 print('x is %d, y is %s, z is %s' % (x, y, z))
 
 # Use the 'format' string method to print the same thing
-str = 'x is {}, y is {}, z is {}'
-print(str.format(x, y, z))
+print("x is {}, y is {:.2f}, z is {}".format(x, y, z))
 
 # Finally, print the same thing using an f-string
-def fString(x, y, z):
-    print(f"x is {x}, y is {y}, z is {z}")
+# def fString(x, y, z):
+#     print(f"x is {x}, y is {y}, z is {z}")
 
-fString(10, 2.25, "I like turtles!")
+# fString(10, 2.25, "I like turtles!")
+
+print(f"x is {x}, y is {y:.2f}, z is {z}")
