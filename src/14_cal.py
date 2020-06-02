@@ -31,13 +31,19 @@ import sys
 import calendar
 from datetime import datetime
 
-d = datetime.today()
-
-def cal(mm = d.month, yy = d.year):
-    print(calendar.month(yy, mm))
-# Prints a calendar based on the current month and year
-cal()
-# Prints a calendar based on the given month of the current year
-cal(1)
-# Prints a calendar based on the given year and month
-cal(4, 2015)
+now = datetime.now()
+if len(sys.argv) == 3:
+    month = sys.argv[1]
+    year = sys.argv[2]
+elif len(sys.argv) == 2:
+    month = sys.argv[1]
+    year = now.year
+elif len(sys.argv) == 1:
+    month = now.month
+    year = now.year
+else:
+    print("please provide args in the format [month] [year] and try again")
+    print("exiting...")
+    exit()
+c = calendar.month(int(year), int(month))
+print(c)
